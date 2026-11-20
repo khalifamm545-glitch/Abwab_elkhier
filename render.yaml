@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: abwab-el-khair
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: NODE_ENV=production node server.ts
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: ./data
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: BACKUP_RETENTION_COUNT
+        value: "30"
+      - key: BACKUP_RETENTION_DAYS
+        value: "90"

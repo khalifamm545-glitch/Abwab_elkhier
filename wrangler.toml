@@ -1,0 +1,38 @@
+# =============================================================================
+# أبواب الخير (Abwab El Khair) — Cloudflare Workers Production Configuration
+# Architecture:
+#   - Compute + HTTPS + PWA Static Assets : Cloudflare Workers (Free Tier)
+#   - Primary Structured Database         : Neon PostgreSQL (via DATABASE_URL secret)
+#   - Attachments & AES-256-GCM Backups   : Cloudflare R2 (ABWAB_FILES binding)
+#
+# Required Secrets (NEVER hardcode here — set once via Wrangler CLI):
+#   npx wrangler secret put DATABASE_URL
+#   npx wrangler secret put SESSION_SECRET
+#
+# Required R2 Bucket (create once before first deploy):
+#   npx wrangler r2 bucket create abwab-el-khair-files
+# =============================================================================
+
+name = "abwab-el-khair"
+main = "worker/index.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+[[r2_buckets]]
+binding = "ABWAB_FILES"
+bucket_name = "abwab-el-khair-files"
+
+[triggers]
+# Daily AES-256-GCM encrypted backup snapshot to Cloudflare R2 at 03:00 UTC
+crons = ["0 3 * * *"]
+
+[vars]
+# Retention policy: keep up to 30 snapshots / 90 days (minimum 5 newest always protected)
+BACKUP_RETENTION_COUNT = "30"
+BACKUP_RETENTION_DAYS = "90"

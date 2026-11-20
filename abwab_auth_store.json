@@ -1,0 +1,76 @@
+{
+  "users": [],
+  "activities": [],
+  "tasks": [],
+  "families": [],
+  "monthlyDisbursements": [],
+  "pensionPlans": [],
+  "donations": [],
+  "treasuryAccounts": [
+    {
+      "id": "treasury-main-vault",
+      "name": "الخزينة الرئيسية — أبواب الخير",
+      "accountType": "cash_vault",
+      "bankName": "",
+      "accountNumberMasked": "",
+      "isActive": true,
+      "currentBalance": "0.00",
+      "fundBalances": {
+        "zakat_mal": "0.00",
+        "zakat_fitr": "0.00",
+        "sadaqah": "0.00",
+        "general": "0.00",
+        "project_restricted": "0.00"
+      },
+      "createdAt": "2026-11-18T12:39:35.059Z",
+      "updatedAt": "2026-11-18T12:39:35.059Z"
+    }
+  ],
+  "financialTransactions": [],
+  "projects": [],
+  "warehouseItems": [],
+  "warehouseMovements": [],
+  "volunteers": [],
+  "documents": [],
+  "organizationSettings": {
+    "nameAr": "أبواب الخير",
+    "sloganAr": "أبواب الخير ... طريقك للخير 💚",
+    "secondarySloganAr": "وهنفتح كل يوم باب جديد للخير 💚",
+    "registrationNumber": "",
+    "phone": "",
+    "email": "",
+    "address": "",
+    "currency": "EGP",
+    "customLogoUrl": null,
+    "receiptPrefix": "DON",
+    "receiptFooterAr": "شكراً لعطائكم — عطاؤك اليوم يفتح باباً للأمل غداً.",
+    "authorizedSignerName": "رئيس مجلس الإدارة",
+    "customDonationTypes": [
+      "التبرعات الشهرية",
+      "الصدقات",
+      "زكاة المال",
+      "زكاة الفطر",
+      "التبرعات العامة",
+      "التبرعات المخصصة لمشروع",
+      "التبرعات العينية"
+    ],
+    "customExpenseTypes": [
+      "مصارف زكاة المال الشرعية",
+      "مساعدات خيرية للأسر",
+      "تنفيذ مشروعات خيرية",
+      "مساعدات طبية وعلاجية",
+      "مصروفات إدارية وتشغيلية"
+    ],
+    "customAidTypes": [
+      "معاش خير شهري",
+      "دعم غذائي",
+      "مساعدة علاجية",
+      "مساعدة زواج",
+      "سداد ديون",
+      "كفالة أيتام"
+    ],
+    "updatedAt": "2026-11-18T12:39:35.059Z"
+  },
+  "passwordResetRequests": [],
+  "auditLogs": []
+}

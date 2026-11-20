@@ -1,0 +1,6 @@
+{
+  "name": "أبواب الخير",
+  "description": "منصة متكاملة لإدارة الأعمال الخيرية والحوكمة المالية ورعاية الأسر المستفيدة لمؤسسة أبواب الخير — طريقك للخير.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
