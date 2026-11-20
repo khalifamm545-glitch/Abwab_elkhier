@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cairo", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans Arabic", "Cairo", system-ui, sans-serif;
+
+  --color-brand-green: #67B477;
+  --color-brand-green-strong: #32764C;
+  --color-brand-pale: #EEF7F0;
+  --color-brand-teal: #167764;
+  --color-brand-teal-deep: #0F4F42;
+  --color-brand-cream: #FBF2E0;
+}
+
+@layer base {
+  html {
+    direction: rtl;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #f7faf8;
+    color: #102a24;
+  }
+}
